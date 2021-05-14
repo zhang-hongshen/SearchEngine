@@ -20,8 +20,6 @@
 - 支持多个根网页
 - 支持最大搜索网页数
 
-- 支持自定义搜索深度（测试中）
-
 ```java
 //初始化根网页，这里以https://docs.oracle.com/en/java/javase/11/docs/api为跟网页
 List<String> rootUrls = new ArrayList<>();

@@ -45,8 +45,7 @@ webCrawler.saveAsHtmlPage("src/test/resources/english/");
 TextPreprocessor processor = new TextPreprocess();
 String text = "哈哈哈哈，我是个人才";
 //结果返回
-List<String> words = new ArrayList<>();
-String result = processor.process(text,words,"chinese");
+List<String> words = processor.process(text,"chinese");
 ```
 
 ##### 英文文本预处理
@@ -55,8 +54,7 @@ String result = processor.process(text,words,"chinese");
 TextPreprocessor processor = new TextPreprocess();
 String text = "Hello, this is a simple Search Engine!";
 //结果返回
-List<String> words = new ArrayList<>();
-String result = processor.process(text,words,"english");
+List<String> words = processor.process(text,"english");
 ```
 
 ### 更新日志

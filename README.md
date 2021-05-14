@@ -20,13 +20,14 @@
 - 支持多个根网页
 - 支持最大搜索网页数
 
+
 ```java
 //初始化根网页，这里以https://docs.oracle.com/en/java/javase/11/docs/api为根网页
 List<String> rootUrls = new ArrayList<>();
 rootUrls.add("https://docs.oracle.com/en/java/javase/11/docs/api");
 //2种初始化网络爬虫方式
-WebCrawler webCrawler = new WebCrawler(rootUrls);//默认搜索深度为1，最大抓取网页100个
-WebCrawler webCrawler = new WebCrawler(rootUrls,0,500);//搜索深度无限制，最大抓取网页500个
+WebCrawler webCrawler = new WebCrawler(rootUrls);//默认最大抓取网页100个
+WebCrawler webCrawler = new WebCrawler(rootUrls,500);//最大抓取网页500个
 
 //开始爬取网页
 webCrawler.start();
@@ -67,7 +68,7 @@ String result = processor.process(text,words,"english");
 
 ##### 2021.5.14
 
-- 修复了Web Crawler一些已知Bug
-- 优化了Web Crawler的爬取速度
+- 修复了内置网络爬虫一些已知Bug
+- 优化了内置网路爬虫的爬取速度
 - 优化了文本预处理的代码逻辑
 

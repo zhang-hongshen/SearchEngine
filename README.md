@@ -21,7 +21,7 @@
 - 支持最大搜索网页数
 
 ```java
-//初始化根网页，这里以https://docs.oracle.com/en/java/javase/11/docs/api为跟网页
+//初始化根网页，这里以https://docs.oracle.com/en/java/javase/11/docs/api为根网页
 List<String> rootUrls = new ArrayList<>();
 rootUrls.add("https://docs.oracle.com/en/java/javase/11/docs/api");
 //2种初始化网络爬虫方式

@@ -17,25 +17,24 @@
 
 #### Web Crawler
 
-- 支持自定义搜索深度和最大搜索网页数
 - 支持多个根网页
+- 支持最大搜索网页数
+
+- 支持自定义搜索深度（测试中）
 
 ```java
 //初始化根网页，这里以https://docs.oracle.com/en/java/javase/11/docs/api为跟网页
 List<String> rootUrls = new ArrayList<>();
 rootUrls.add("https://docs.oracle.com/en/java/javase/11/docs/api");
-//4种初始化网络爬虫方式
+//2种初始化网络爬虫方式
 WebCrawler webCrawler = new WebCrawler(rootUrls);//默认搜索深度为1，最大抓取网页100个
 WebCrawler webCrawler = new WebCrawler(rootUrls,0,500);//搜索深度无限制，最大抓取网页500个
-WebCrawler webCrawler = new WebCrawler(rootUrls,2,0);//搜索深度为2，最大抓取网页无限制
-WebCrawler webCrawler = new WebCrawler(rootUrls,2,500);//搜索深度为2，最大抓取网页500个
+
 //开始爬取网页
 webCrawler.start();
 //结果保存为html文件
 webCrawler.saveAsHtmlPage("src/test/resources/english/");
 ```
-
-
 
 ### 文本预处理
 
@@ -46,7 +45,9 @@ webCrawler.saveAsHtmlPage("src/test/resources/english/");
 ```java
 TextPreprocessor processor = new TextPreprocess();
 String text = "哈哈哈哈，我是个人才";
-String result = processor.process(text,"chinese");
+//结果返回
+List<String> words = new ArrayList<>();
+String result = processor.process(text,words,"chinese");
 ```
 
 ##### 英文文本预处理
@@ -54,7 +55,9 @@ String result = processor.process(text,"chinese");
 ```java
 TextPreprocessor processor = new TextPreprocess();
 String text = "Hello, this is a simple Search Engine!";
-String result = processor.process(text,"english");
+//结果返回
+List<String> words = new ArrayList<>();
+String result = processor.process(text,words,"english");
 ```
 
 ### 更新日志
@@ -63,4 +66,10 @@ String result = processor.process(text,"english");
 
 - 优化代码结构
 
-- 修复了一些已知Bug
+
+##### 2021.5.18
+
+- 修复了Web Crawler一些已知Bug
+- 优化了Web Crawler的爬取速度
+- 优化了文本预处理的代码逻辑
+

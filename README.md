@@ -67,6 +67,6 @@ List<String> words = processor.process(text,"english");
 ##### 2021.5.14
 
 - 修复了内置网络爬虫一些已知Bug
-- 优化了内置网路爬虫的爬取速度
+- 优化了内置网络爬虫的爬取速度
 - 优化了文本预处理的代码逻辑
 
